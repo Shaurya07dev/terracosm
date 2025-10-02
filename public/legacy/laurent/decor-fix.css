@@ -1,0 +1,21 @@
+/* Force decor SVGs to display */
+.eltdf-st-title-holder .decor {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  margin: 0 12px !important;
+}
+
+.eltdf-st-title-holder .decor svg {
+  display: block !important;
+  width: 41.125px !important;
+  height: 9.146px !important;
+}
+
+.eltdf-st-title-holder {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}

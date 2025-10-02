@@ -1,0 +1,9 @@
+/* Override broken font declarations to prevent console errors */
+@font-face {
+  font-family: 'caviar_dreamsbold';
+  /* Fallback to system sans-serif until valid font files are provided */
+  src: local('Arial'), local('Helvetica');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
