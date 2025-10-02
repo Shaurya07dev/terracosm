@@ -1,0 +1,70 @@
+/* Reservation form overrides - ensure date/select fields match theme and are visible */
+:root {
+  --gold: #c9ab81;
+  --gold-60: rgba(201, 171, 129, 0.6);
+  --bg-dark: #0f1d22;
+  --text: #d9d9d9;
+}
+
+/* Base inputs */
+.eltdf-rf input[type="date"],
+.eltdf-rf select.eltdf-ot-people,
+.eltdf-rf select.eltdf-ot-time,
+.eltdf-ot-date {
+  width: 100% !important;
+  height: 50px !important;
+  line-height: 48px !important;
+  padding: 0 18px !important;
+  border: 1px solid var(--gold-60) !important;
+  background: transparent !important;
+  color: var(--text) !important;
+  font-size: 14px !important;
+  letter-spacing: 0.06em !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+}
+
+/* Date input specifics */
+.eltdf-rf input[type="date"].eltdf-ot-date,
+.eltdf-ot-date[type="date"] {
+  color-scheme: dark; /* helps native pickers in dark bg */
+  position: relative;
+}
+
+/* Calendar icon styling (Chromium/WebKit) */
+.eltdf-rf input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(85%) sepia(10%) saturate(250%) hue-rotate(330deg) brightness(95%) contrast(85%);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* Placeholder colors where applicable */
+.eltdf-rf ::placeholder {
+  color: var(--gold-60) !important;
+  opacity: 1 !important;
+}
+
+/* Focus state */
+.eltdf-rf input[type="date"]:focus,
+.eltdf-rf select:focus {
+  border-color: var(--gold) !important;
+}
+
+/* Fix field holders and alignment */
+.eltdf-rf-holder .eltdf-rf-row .eltdf-rf-field-holder {
+  display: block !important;
+}
+
+/* Ensure selects have caret spacing */
+.eltdf-rf select {
+  background-image: none !important;
+}
+
+/* Edge/Firefox fixes */
+.eltdf-rf input[type="date"]::-ms-clear { display: none; }
+.eltdf-rf input[type="date"]::-moz-focus-inner { border: 0; padding: 0; }

@@ -11,8 +11,8 @@ function ReservationSection() {
                 <div className="wpb_column vc_column_container vc_col-sm-12">
                   <div className="vc_column-inner">
                     <div className="wpb_wrapper">
-                      <div className="eltdf-section-title-holder eltdf-st-decor-animation" style={{ textAlign: 'center' }}>
-                        <div className="eltdf-st-inner">
+                      <div className="eltdf-section-title-holder eltdf-st-decor-animation">
+                        <div className="eltdf-st-inner" style={{ textAlign: 'center' }}>
                           <span className="eltdf-st-tagline">Reservations</span>
                           <div className="eltdf-st-title-holder">
                             <div className="decor"><svg xmlns="http://www.w3.org/2000/svg" width="41.125" height="9.146"><path fill="none" stroke="#9C7C57" strokeMiterlimit="10" d="M40.881 8.576L20.562.591.244 8.576"></path><path fill="none" stroke="#9C7C57" strokeMiterlimit="10" d="M40.881.591L20.562 8.576.243.591"></path></svg></div>
@@ -22,10 +22,18 @@ function ReservationSection() {
                         </div>
                       </div>
 
-                      <div className="vc_empty_space" style={{ height: 56 }}><span className="vc_empty_space_inner"></span></div>
+                      <div className="vc_empty_space"><span className="vc_empty_space_inner"></span></div>
 
                       <div className="eltdf-elements-holder eltdf-one-column eltdf-responsive-mode-768">
-                        <div className="eltdf-eh-item" data-item-class="eltdf-eh-custom-5773">
+                        <div
+                          className="eltdf-eh-item"
+                          data-item-class="eltdf-eh-custom-5773"
+                          data-1400-1600="0 6.4%"
+                          data-1025-1399="0 3%"
+                          data-769-1024="0 0 0 8.4%"
+                          data-681-768="0 0 0 8.4%"
+                          data-680="0 0 0 8.4%"
+                        >
                           <div className="eltdf-eh-item-inner">
                             <div className="eltdf-eh-item-content eltdf-eh-custom-5773" style={{ padding: '0 8.4%' }}>
                               <div className="eltdf-rf-holder eltdf-rf-inline">
@@ -42,7 +50,8 @@ function ReservationSection() {
                                     </div>
                                     <div className="eltdf-rf-col-holder">
                                       <div className="eltdf-rf-field-holder eltdf-rf-date-col clearfix">
-                                        <input type="date" className="eltdf-ot-date" name="date" />
+                                        <input type="text" className="eltdf-ot-date hasDatepicker" name="date" placeholder="mm/dd/yyyy" />
+                                        <span className="rf-caret" aria-hidden="true"></span>
                                       </div>
                                     </div>
                                     <div className="eltdf-rf-col-holder eltdf-rf-time-col">
@@ -93,6 +102,25 @@ function ReservationSection() {
           </div>
         </div>
       </div>
+      {/* local styles to ensure date caret and spacing match reference */}
+      <style>{`
+        /* Positioning context */
+        .eltdf-rf-date-col { position: relative; }
+        /* Give room for caret */
+        .eltdf-rf-date-col .eltdf-ot-date { padding-right: 44px; }
+        /* Draw a double-chevron caret */
+        .eltdf-rf-date-col .rf-caret {
+          position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+          width: 16px; height: 12px; pointer-events: none; opacity: 0.9;
+          background-repeat: no-repeat; background-position: center; background-size: 16px 12px;
+          background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23c9ab81' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'><path d='M1 3.5 L6 8.5 L11 3.5'/><path d='M1 1.5 L6 6.5 L11 1.5'/></svg>");
+        }
+        /* Kill theme pseudos that sometimes print a glyph like '7' */
+        .eltdf-rf-date-col::before,
+        .eltdf-rf-date-col::after,
+        .eltdf-rf-date-col .eltdf-ot-date::before,
+        .eltdf-rf-date-col .eltdf-ot-date::after { content: none !important; }
+      `}</style>
     </section>
   );
 }

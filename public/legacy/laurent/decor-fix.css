@@ -1,16 +1,37 @@
-/* Force decor SVGs to display */
+/* Force decor SVGs to display - override ALL theme CSS */
 .eltdf-st-title-holder .decor {
   display: inline-block !important;
   vertical-align: middle !important;
   opacity: 1 !important;
   visibility: visible !important;
   margin: 0 12px !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  position: relative !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  clip: auto !important;
+  clip-path: none !important;
 }
 
 .eltdf-st-title-holder .decor svg {
   display: block !important;
   width: 41.125px !important;
   height: 9.146px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  fill: none !important;
+  overflow: visible !important;
+}
+
+.eltdf-st-title-holder .decor svg path {
+  opacity: 1 !important;
+  visibility: visible !important;
+  stroke: #9C7C57 !important;
+  stroke-width: 1.5 !important;
+  fill: none !important;
 }
 
 .eltdf-st-title-holder {
@@ -18,4 +39,12 @@
   align-items: center !important;
   justify-content: center !important;
   flex-wrap: wrap !important;
+  gap: 12px !important;
+}
+
+/* Override any animation class that might hide decor */
+.eltdf-st-decor-animation .decor {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
 }

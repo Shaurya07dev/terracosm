@@ -54,11 +54,11 @@ function App() {
           <main className="eltdf-content">
             <div className="eltdf-content-inner">
               <AboutSection />
-              <PhilosophySection />
+              <Testimonials />
               <MenuSection />
+              <PhilosophySection />
               <ParallaxBanner />
               <MenuGallery />
-              <Testimonials />
               <ReservationSection />
               <ContactSection />
             </div>
